@@ -17,6 +17,7 @@
         <div class="logo-holder">
             <img src="images/kredi.png" alt="Kredi Logo">
         </div>
+
         <!-- registration form -->
         <div class="registration-form">
             <h3>Business Account Opening Registration</h3>
@@ -24,72 +25,80 @@
                 <div class="error">
                     <p>Invalid Organization Details </p>
                 </div>
-                <form action="{{route('client.register')}}" onsubmit="return validate()">
+                <form action="{{route('client.register')}}" method="POST" onsubmit="return validate()" enctype="multipart/form-data">
+                    @csrf
                     <div class="card-title">
                         1. Organisation's Profile
                     </div>
                     <div class="input-group">
                         <label for="">Organisation Name</label>
-                        <input type="text" class="org-name" placeholder="Organisation Name">
+                        <input type="text" class="org-name" placeholder="Organisation Name" name="organization_name">
                     </div>
 
                     <div class="input-group">
                         <label for="">RC Number</label>
-                        <input type="text" class="rc-number" placeholder="RC Number">
+                        <input type="text" class="rc-number" name="rc_number" placeholder="RC Number">
                     </div>
                     <div class="input-group">
                         <label for="">Country</label>
-                        <input type="text" class="country" placeholder="Country">
+                        <input type="text" class="country" name="country" placeholder="Country">
                     </div>
                     <div class="input-group">
                         <label for="">Type of Business </label>
-                        <input type="text" class="business-type" placeholder="Type of Business">
+                        <input type="text" class="business-type" name="business_type" placeholder="Type of Business">
                     </div>
                     <div class="input-group">
                         <label for="">Date of Incorporation</label>
-                        <input type="date" class="date" placeholder="Date of Incorporation">
+                        <input type="date" class="date" name="incorporation_date" placeholder="Date of Incorporation">
                     </div>
                     <div class="input-group">
                         <label for="">CAC Document URL</label>
-                        <input type="text" class="cac-url" placeholder="CAC Document URL">
+                        <input type="text" class="cac-url" name="cac_document_url" placeholder="CAC Document URL">
                     </div>
                     <div class="card-title">
                         2. Organisation's Contact Details
                     </div>
                     <div class="input-group">
                         <label for="">Organisation's Contact Number</label>
-                        <input type="text" class="org-number" placeholder="Organisation's Contact Number">
+                        <input type="text" class="org-number" name="organization_contact" placeholder="Organisation's Contact Number">
                     </div>
+
+
+
+
+
+
+
                     <div class="input-group">
                         <label for="">Organisation's Email Address</label>
-                        <input type="text" class="org-email" placeholder="Organisation's Email Address">
+                        <input type="text" class="org-email" name="organization_email" placeholder="Organisation's Email Address">
                     </div>
                     <div class="input-group">
                         <label for="">Webhook URL</label>
-                        <input type="text" class="webhook" placeholder="Webhook URL">
+                        <input type="text" class="webhook" name="webhook_url" placeholder="Webhook URL">
                     </div>
                     <div class="card-title">
                         3. Organisation's Board
                     </div>
                     <div class="input-group">
                         <label for="">Name of Director</label>
-                        <input type="text" class="director-name" placeholder="Name of Director">
+                        <input type="text" class="director-name" name="director_name" placeholder="Name of Director">
                     </div>
                     <div class="input-group">
                         <label for="">Director's Contact Number</label>
-                        <input type="text" class="director-number" placeholder="Director's Contact Number">
+                        <input type="text" class="director-number" name="director_contact" placeholder="Director's Contact Number">
                     </div>
                     <div class="input-group">
                         <label for="">Director's Official Email Address</label>
-                        <input type="text" class="director-email" placeholder="Director's Official Email Address">
+                        <input type="text" class="director-email" name="director_email" placeholder="Director's Official Email Address">
                     </div>
                     <div class="input-group">
                         <label for="">Director's Identification Card</label>
-                        <input type="file" class="director-id" placeholder="Director's Identification Card">
+                        <input type="file" class="director-id" name="director_id_card" placeholder="Director's Identification Card">
                     </div>
                     <div class="input-group">
                         <label for="">Director Passport </label>
-                        <input type="file" class="director-passport" placeholder="First Name">
+                        <input type="file" class="director-passport" name="director_passport" placeholder="First Name">
                     </div>
                     <div class="card-title">
                         4. Terms & Conditions
@@ -102,7 +111,7 @@
                         </div>
                     </div>
                     <div class="input-group btn-holder">
-                        <button type="submit" class="btn">Submit</button>
+                        <button class="btn">Submit</button>
                     </div>
                 </form>
             </div>

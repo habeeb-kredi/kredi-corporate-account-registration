@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+//Route::get('/', function () {
+//    return Inertia::render('Welcome', [
+//        'canLogin' => Route::has('login'),
+//        'canRegister' => Route::has('register'),
+//        'laravelVersion' => Application::VERSION,
+//        'phpVersion' => PHP_VERSION,
+//    ]);
+//});
+
+Route::get('/', [\App\Http\Controllers\CustomerController::class, 'index']);
+Route::post('/', [\App\Http\Controllers\CustomerController::class, 'register'])->name('client.register');
+
+Route::prefix('admin')->group(function(){
+    Route::get('/dashboard', [\App\Http\Controllers\DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+    Route::get('/client/{customer}', [\App\Http\Controllers\DashboardController::class, 'showClient'])->middleware(['auth', 'verified'])->name('customer');
+
 });
+
+
+
+//Route::get('/client', [\App\Http\Controllers\CustomerController::class, 'register']);
+require __DIR__.'/auth.php';

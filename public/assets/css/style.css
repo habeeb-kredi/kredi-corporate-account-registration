@@ -1,0 +1,179 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: #28374C;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  width: 100%;
+}
+
+.customer-registration-section {
+  width: 90%;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+@media screen and (max-width: 767px) {
+  .customer-registration-section {
+    width: calc(100% - 20px);
+  }
+}
+
+.customer-registration-section .logo-holder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.customer-registration-section .logo-holder img {
+  height: 20px;
+}
+
+.customer-registration-section .registration-form {
+  margin-top: 20px;
+}
+
+.customer-registration-section .registration-form h3 {
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 767px) {
+  .customer-registration-section .registration-form h3 {
+    font-size: 18px;
+  }
+}
+
+.customer-registration-section .registration-form .card {
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.customer-registration-section .registration-form .card .card-title {
+  width: 100%;
+  font-size: 14px;
+  color: #28374C;
+  font-weight: 600;
+}
+
+.customer-registration-section .registration-form .card form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 20px;
+}
+
+@media screen and (min-width: 1920px) {
+  .customer-registration-section .registration-form .card form {
+    gap: 20px;
+  }
+}
+
+.customer-registration-section .registration-form .card form .input-group {
+  width: calc(50% - 10px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.customer-registration-section .registration-form .card form .input-group.term-checkbox {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.customer-registration-section .registration-form .card form .input-group.term-checkbox p {
+  color: #28374C;
+  font-size: 14px;
+}
+
+.customer-registration-section .registration-form .card form .input-group.term-checkbox .input-checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.customer-registration-section .registration-form .card form .input-group.term-checkbox .input-checkbox label {
+  margin-right: 20px;
+  margin-left: 5px;
+}
+
+.customer-registration-section .registration-form .card form .input-group.btn-holder {
+  width: 100%;
+}
+
+.customer-registration-section .registration-form .card form .input-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #28374C;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.customer-registration-section .registration-form .card form .input-group input {
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  outline: none;
+  padding: 10px;
+}
+
+.customer-registration-section .registration-form .card form .input-group button {
+  background: #28374c;
+  color: #fff;
+  font-size: 14px;
+  height: 40px;
+  outline: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.customer-registration-section .registration-form .card form .input-group button:hover {
+  background: rgba(40, 55, 76, 0.8);
+}
+
+@media screen and (min-width: 1920px) {
+  .customer-registration-section .registration-form .card form .input-group {
+    width: calc(100% / 3 - 15px);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .customer-registration-section .registration-form .card form .input-group {
+    width: 100%;
+  }
+}
+
+.error {
+  background: rgba(255, 0, 0, 0.2);
+  color: red;
+  font-size: 14px;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 20px;
+  display: none;
+}
